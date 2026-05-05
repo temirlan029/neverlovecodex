@@ -1,9 +1,11 @@
 const DISCORD_API = "https://discord.com/api/v10";
 
+const env = (key: string) => process.env[key]?.trim() || "";
+
 export const DISCORD_AUTH_URL = () => {
   const params = new URLSearchParams({
-    client_id: process.env.DISCORD_CLIENT_ID!,
-    redirect_uri: process.env.DISCORD_REDIRECT_URI!,
+    client_id: env("DISCORD_CLIENT_ID"),
+    redirect_uri: env("DISCORD_REDIRECT_URI"),
     response_type: "code",
     scope: "identify guilds",
   });
@@ -30,11 +32,11 @@ export async function exchangeCode(code: string): Promise<DiscordTokenResponse> 
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
-      client_id: process.env.DISCORD_CLIENT_ID!,
-      client_secret: process.env.DISCORD_CLIENT_SECRET!,
+      client_id: env("DISCORD_CLIENT_ID"),
+      client_secret: env("DISCORD_CLIENT_SECRET"),
       grant_type: "authorization_code",
       code,
-      redirect_uri: process.env.DISCORD_REDIRECT_URI!,
+      redirect_uri: env("DISCORD_REDIRECT_URI"),
     }),
   });
   if (!res.ok) throw new Error(`Discord token exchange failed: ${res.status}`);
