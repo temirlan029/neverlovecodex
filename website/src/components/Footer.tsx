@@ -11,7 +11,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-4">
             <Link
-              href="https://discord.gg/agJ4dxNFT8"
+              href="https://discord.gg/TGCjdarTSb"
               target="_blank"
               className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
             >

@@ -101,7 +101,7 @@ export default function HomePage() {
           <FadeIn delay={450}>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
-                href="https://discord.gg/agJ4dxNFT8"
+                href="https://discord.gg/TGCjdarTSb"
                 target="_blank"
                 className="group relative px-7 py-3.5 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-all hover:scale-105 glow-purple-sm overflow-hidden"
               >
